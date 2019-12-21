@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CRMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADM_CLIENT">
+          <Key>
+            <PropertyRef Name="TRAN_CODE" />
+          </Key>
+          <Property Name="TRAN_CODE" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="TRAN_DATE" Type="date" />
+          <Property Name="BUS_TYPE" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="CLIENT_TYPE" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="CLIENT_STATUS" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="PARTY_CODE" Type="numeric" Precision="38" Scale="0" />
+          <Property Name="NAME" Type="varchar(max)" />
+          <Property Name="ADDRESS" Type="varchar(max)" />
+          <Property Name="ADDRESS_PERM" Type="varchar(max)" />
+          <Property Name="ADDRESS_PRES" Type="varchar(max)" />
+          <Property Name="ADDRESS_CITY" Type="varchar" MaxLength="50" />
+          <Property Name="PHONE" Type="varchar(max)" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="100" />
+          <Property Name="CNIC" Type="numeric" Precision="15" Scale="0" />
+          <Property Name="CNIC_EXPIRY" Type="date" />
+          <Property Name="NTN" Type="varchar" MaxLength="50" />
+          <Property Name="INCORP_NO" Type="varchar" MaxLength="50" />
+          <Property Name="INCORP_DATE" Type="date" />
+          <Property Name="CONTACT_PERSON" Type="varchar(max)" />
+          <Property Name="CONTACT_PERSON_DESIG" Type="varchar(max)" />
+          <Property Name="CONTACT_PERSON_CELL" Type="varchar" MaxLength="50" />
+          <Property Name="BRANCH" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="MARKET_MANAGER" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="COMMENT" Type="varchar(max)" />
+          <Property Name="FUP" Type="numeric" Precision="1" Scale="0" />
+          <Property Name="FUP_DATE" Type="date" />
+          <Property Name="FUP_COMMENT" Type="varchar(max)" />
+          <Property Name="AUTH_STATUS" Type="varchar" MaxLength="1" />
+          <Property Name="AUTH_DATE" Type="datetime" />
+          <Property Name="AUTH_BY" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="AUTH_REMARKS" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="ADM_DEF_ACC_MGR">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="EMP_CODE" Type="varchar" MaxLength="7" />
+          <Property Name="NAME" Type="varchar(max)" />
+          <Property Name="DESIG" Type="varchar" MaxLength="80" />
+          <Property Name="BRANCH_CODE" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="PHONE" Type="varchar" MaxLength="60" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="60" />
+          <Property Name="MOBILE" Type="varchar" MaxLength="60" />
+          <Property Name="SIGN" Type="image" />
+          <Property Name="AUTH_STATUS" Type="varchar" MaxLength="1" />
+          <Property Name="AUTH_DATE" Type="datetime" />
+          <Property Name="AUTH_BY" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="AUTH_REMARKS" Type="varchar(max)" />
+          <Property Name="INACTIVE" Type="numeric" Precision="1" Scale="0" />
+        </EntityType>
+        <EntityType Name="ADM_DEF_BRANCH">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="DESC" Type="varchar(max)" Nullable="false" />
+          <Property Name="ABRV" Type="varchar" MaxLength="50" />
+          <Property Name="CITY_CODE" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="HDBR_CD" Type="numeric" Precision="2" Scale="0" />
+          <Property Name="ADDRESS" Type="varchar(max)" />
+          <Property Name="PHONE" Type="varchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="80" />
+          <Property Name="MANAGER" Type="varchar(max)" />
+          <Property Name="AUTH_STATUS" Type="varchar" MaxLength="1" />
+          <Property Name="AUTH_DATE" Type="datetime" />
+          <Property Name="AUTH_BY" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="AUTH_REMARKS" Type="varchar(max)" />
+          <Property Name="INACTIVE_IMS" Type="numeric" Precision="1" Scale="0" />
+          <Property Name="INACTIVE_MFL" Type="numeric" Precision="1" Scale="0" />
+        </EntityType>
+        <EntityType Name="ADM_DEF_BUS_TYPE">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="DESC" Type="varchar(max)" />
+          <Property Name="AUTH_STATUS" Type="varchar" MaxLength="1" />
+          <Property Name="AUTH_DATE" Type="datetime" />
+          <Property Name="AUTH_BY" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="AUTH_REMARKS" Type="varchar(max)" />
+          <Property Name="INACTIVE" Type="numeric" Precision="1" Scale="0" />
+        </EntityType>
+        <EntityType Name="ADM_DEF_CLIENT_TYPE">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="TYPE" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="DESC" Type="varchar(max)" />
+          <Property Name="AUTH_STATUS" Type="varchar" MaxLength="1" />
+          <Property Name="AUTH_DATE" Type="datetime" />
+          <Property Name="AUTH_BY" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="AUTH_REMARKS" Type="varchar(max)" />
+          <Property Name="INACTIVE_IMS" Type="numeric" Precision="1" Scale="0" />
+          <Property Name="INACTIVE_MFL" Type="numeric" Precision="1" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="CRMModelStoreContainer">
+          <EntitySet Name="ADM_CLIENT" EntityType="Self.ADM_CLIENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ADM_DEF_ACC_MGR" EntityType="Self.ADM_DEF_ACC_MGR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ADM_DEF_BRANCH" EntityType="Self.ADM_DEF_BRANCH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ADM_DEF_BUS_TYPE" EntityType="Self.ADM_DEF_BUS_TYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ADM_DEF_CLIENT_TYPE" EntityType="Self.ADM_DEF_CLIENT_TYPE" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CRMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADM_CLIENT">
+          <Key>
+            <PropertyRef Name="TRAN_CODE" />
+          </Key>
+          <Property Name="TRAN_CODE" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="TRAN_DATE" Type="DateTime" Precision="0" />
+          <Property Name="BUS_TYPE" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="CLIENT_TYPE" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="CLIENT_STATUS" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="PARTY_CODE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS_PERM" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS_PRES" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS_CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CNIC" Type="Decimal" Precision="15" Scale="0" />
+          <Property Name="CNIC_EXPIRY" Type="DateTime" Precision="0" />
+          <Property Name="NTN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="INCORP_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="INCORP_DATE" Type="DateTime" Precision="0" />
+          <Property Name="CONTACT_PERSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CONTACT_PERSON_DESIG" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CONTACT_PERSON_CELL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BRANCH" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="MARKET_MANAGER" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FUP" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="FUP_DATE" Type="DateTime" Precision="0" />
+          <Property Name="FUP_COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AUTH_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="AUTH_DATE" Type="DateTime" Precision="3" />
+          <Property Name="AUTH_BY" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="AUTH_REMARKS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ADM_DEF_ACC_MGR">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="EMP_CODE" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DESIG" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="BRANCH_CODE" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="PHONE" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="MOBILE" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="SIGN" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="AUTH_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="AUTH_DATE" Type="DateTime" Precision="3" />
+          <Property Name="AUTH_BY" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="AUTH_REMARKS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="INACTIVE" Type="Decimal" Precision="1" Scale="0" />
+        </EntityType>
+        <EntityType Name="ADM_DEF_BRANCH">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ABRV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CITY_CODE" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="HDBR_CD" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="MANAGER" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AUTH_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="AUTH_DATE" Type="DateTime" Precision="3" />
+          <Property Name="AUTH_BY" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="AUTH_REMARKS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="INACTIVE_IMS" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="INACTIVE_MFL" Type="Decimal" Precision="1" Scale="0" />
+        </EntityType>
+        <EntityType Name="ADM_DEF_BUS_TYPE">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AUTH_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="AUTH_DATE" Type="DateTime" Precision="3" />
+          <Property Name="AUTH_BY" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="AUTH_REMARKS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="INACTIVE" Type="Decimal" Precision="1" Scale="0" />
+        </EntityType>
+        <EntityType Name="ADM_DEF_CLIENT_TYPE">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="TYPE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AUTH_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="AUTH_DATE" Type="DateTime" Precision="3" />
+          <Property Name="AUTH_BY" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="AUTH_REMARKS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="INACTIVE_IMS" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="INACTIVE_MFL" Type="Decimal" Precision="1" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="CRMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADM_CLIENT" EntityType="Self.ADM_CLIENT" />
+          <EntitySet Name="ADM_DEF_ACC_MGR" EntityType="Self.ADM_DEF_ACC_MGR" />
+          <EntitySet Name="ADM_DEF_BRANCH" EntityType="Self.ADM_DEF_BRANCH" />
+          <EntitySet Name="ADM_DEF_BUS_TYPE" EntityType="Self.ADM_DEF_BUS_TYPE" />
+          <EntitySet Name="ADM_DEF_CLIENT_TYPE" EntityType="Self.ADM_DEF_CLIENT_TYPE" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CRMModelStoreContainer" CdmEntityContainer="CRMEntities">
+          <EntitySetMapping Name="ADM_CLIENT">
+            <EntityTypeMapping TypeName="CRMModel.ADM_CLIENT">
+              <MappingFragment StoreEntitySet="ADM_CLIENT">
+                <ScalarProperty Name="TRAN_CODE" ColumnName="TRAN_CODE" />
+                <ScalarProperty Name="TRAN_DATE" ColumnName="TRAN_DATE" />
+                <ScalarProperty Name="BUS_TYPE" ColumnName="BUS_TYPE" />
+                <ScalarProperty Name="CLIENT_TYPE" ColumnName="CLIENT_TYPE" />
+                <ScalarProperty Name="CLIENT_STATUS" ColumnName="CLIENT_STATUS" />
+                <ScalarProperty Name="PARTY_CODE" ColumnName="PARTY_CODE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="ADDRESS_PERM" ColumnName="ADDRESS_PERM" />
+                <ScalarProperty Name="ADDRESS_PRES" ColumnName="ADDRESS_PRES" />
+                <ScalarProperty Name="ADDRESS_CITY" ColumnName="ADDRESS_CITY" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+                <ScalarProperty Name="CNIC_EXPIRY" ColumnName="CNIC_EXPIRY" />
+                <ScalarProperty Name="NTN" ColumnName="NTN" />
+                <ScalarProperty Name="INCORP_NO" ColumnName="INCORP_NO" />
+                <ScalarProperty Name="INCORP_DATE" ColumnName="INCORP_DATE" />
+                <ScalarProperty Name="CONTACT_PERSON" ColumnName="CONTACT_PERSON" />
+                <ScalarProperty Name="CONTACT_PERSON_DESIG" ColumnName="CONTACT_PERSON_DESIG" />
+                <ScalarProperty Name="CONTACT_PERSON_CELL" ColumnName="CONTACT_PERSON_CELL" />
+                <ScalarProperty Name="BRANCH" ColumnName="BRANCH" />
+                <ScalarProperty Name="MARKET_MANAGER" ColumnName="MARKET_MANAGER" />
+                <ScalarProperty Name="COMMENT" ColumnName="COMMENT" />
+                <ScalarProperty Name="FUP" ColumnName="FUP" />
+                <ScalarProperty Name="FUP_DATE" ColumnName="FUP_DATE" />
+                <ScalarProperty Name="FUP_COMMENT" ColumnName="FUP_COMMENT" />
+                <ScalarProperty Name="AUTH_STATUS" ColumnName="AUTH_STATUS" />
+                <ScalarProperty Name="AUTH_DATE" ColumnName="AUTH_DATE" />
+                <ScalarProperty Name="AUTH_BY" ColumnName="AUTH_BY" />
+                <ScalarProperty Name="AUTH_REMARKS" ColumnName="AUTH_REMARKS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ADM_DEF_ACC_MGR">
+            <EntityTypeMapping TypeName="CRMModel.ADM_DEF_ACC_MGR">
+              <MappingFragment StoreEntitySet="ADM_DEF_ACC_MGR">
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="EMP_CODE" ColumnName="EMP_CODE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="DESIG" ColumnName="DESIG" />
+                <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+                <ScalarProperty Name="SIGN" ColumnName="SIGN" />
+                <ScalarProperty Name="AUTH_STATUS" ColumnName="AUTH_STATUS" />
+                <ScalarProperty Name="AUTH_DATE" ColumnName="AUTH_DATE" />
+                <ScalarProperty Name="AUTH_BY" ColumnName="AUTH_BY" />
+                <ScalarProperty Name="AUTH_REMARKS" ColumnName="AUTH_REMARKS" />
+                <ScalarProperty Name="INACTIVE" ColumnName="INACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ADM_DEF_BRANCH">
+            <EntityTypeMapping TypeName="CRMModel.ADM_DEF_BRANCH">
+              <MappingFragment StoreEntitySet="ADM_DEF_BRANCH">
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="ABRV" ColumnName="ABRV" />
+                <ScalarProperty Name="CITY_CODE" ColumnName="CITY_CODE" />
+                <ScalarProperty Name="HDBR_CD" ColumnName="HDBR_CD" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="MANAGER" ColumnName="MANAGER" />
+                <ScalarProperty Name="AUTH_STATUS" ColumnName="AUTH_STATUS" />
+                <ScalarProperty Name="AUTH_DATE" ColumnName="AUTH_DATE" />
+                <ScalarProperty Name="AUTH_BY" ColumnName="AUTH_BY" />
+                <ScalarProperty Name="AUTH_REMARKS" ColumnName="AUTH_REMARKS" />
+                <ScalarProperty Name="INACTIVE_IMS" ColumnName="INACTIVE_IMS" />
+                <ScalarProperty Name="INACTIVE_MFL" ColumnName="INACTIVE_MFL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ADM_DEF_BUS_TYPE">
+            <EntityTypeMapping TypeName="CRMModel.ADM_DEF_BUS_TYPE">
+              <MappingFragment StoreEntitySet="ADM_DEF_BUS_TYPE">
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="AUTH_STATUS" ColumnName="AUTH_STATUS" />
+                <ScalarProperty Name="AUTH_DATE" ColumnName="AUTH_DATE" />
+                <ScalarProperty Name="AUTH_BY" ColumnName="AUTH_BY" />
+                <ScalarProperty Name="AUTH_REMARKS" ColumnName="AUTH_REMARKS" />
+                <ScalarProperty Name="INACTIVE" ColumnName="INACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ADM_DEF_CLIENT_TYPE">
+            <EntityTypeMapping TypeName="CRMModel.ADM_DEF_CLIENT_TYPE">
+              <MappingFragment StoreEntitySet="ADM_DEF_CLIENT_TYPE">
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="AUTH_STATUS" ColumnName="AUTH_STATUS" />
+                <ScalarProperty Name="AUTH_DATE" ColumnName="AUTH_DATE" />
+                <ScalarProperty Name="AUTH_BY" ColumnName="AUTH_BY" />
+                <ScalarProperty Name="AUTH_REMARKS" ColumnName="AUTH_REMARKS" />
+                <ScalarProperty Name="INACTIVE_IMS" ColumnName="INACTIVE_IMS" />
+                <ScalarProperty Name="INACTIVE_MFL" ColumnName="INACTIVE_MFL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
